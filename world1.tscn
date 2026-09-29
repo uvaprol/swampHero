@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=4 uid="uid://1qdl6ftkty7e"]
+
+[ext_resource type="PackedScene" uid="uid://fdsja71eoucy" path="res://ground.tscn" id="1_rf4cw"]
+[ext_resource type="PackedScene" uid="uid://bn45pttj6ehev" path="res://player.tscn" id="2_7dtx0"]
+[ext_resource type="PackedScene" uid="uid://qnxwbqgoj3cy" path="res://enemy.tscn" id="3_rro2w"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_7dtx0"]
+scenes/1/scene = ExtResource("1_rf4cw")
+
+[sub_resource type="TileSet" id="TileSet_rro2w"]
+tile_size = Vector2i(40, 40)
+sources/0 = SubResource("TileSetScenesCollectionSource_7dtx0")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAQACAAEAAAAAAAAAAQADAAEAAAAAAAAAAQAEAAEAAAAAAAAAAQAFAAEAAAAAAAAAAQAGAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAIAAEAAAAAAAAAAQAJAAEAAAAAAAAAAQAKAAEAAAAAAAAAAQALAAEAAAAAAAAAAQAMAAEAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_rro2w")
+
+[node name="PLAYER" parent="." instance=ExtResource("2_7dtx0")]
+position = Vector2(146, -24)
+
+[node name="ENEMY" parent="." instance=ExtResource("3_rro2w")]
+position = Vector2(403, -13.999998)
+scale = Vector2(0.31247166, 0.31247166)
